@@ -1,0 +1,22 @@
+<div class="video-modal">
+  <div class="icon-wrapper" (click)="close()">
+    <img width="24" height="24" ngSrc="assets/close_icon.svg" alt="close icon"/>
+  </div>
+
+  <div class="user-video">
+    <video #videoRef class="video" poster="{{ data.video.poster }}">
+      <source [src]="data.video.url" type="video/webm"/>
+    </video>
+  </div>
+
+  <div class="custom-controls-container" [class.visible]="showControls">
+    <div class="play-button" (click)="togglePlay()">
+      <img *ngIf="!isPlayed" width="36" height="36" ngSrc="assets/play_button_icon.svg" alt="play button">
+      <img *ngIf="isPlayed" width="36" height="36" ngSrc="assets/pause_button_icon.svg" alt="pause button">
+    </div>
+
+    <div class="time">{{ currentTime | secondsToVideoTime }}</div>
+    <input class="custom-range" #trackBarRef type="range" min="0" step="0.1" value="0" (input)="onChangeRange($event)">
+    <div class="time">{{ data.video.duration | secondsToVideoTime }}</div>
+  </div>
+</div>

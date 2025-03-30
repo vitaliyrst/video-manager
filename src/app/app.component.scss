@@ -1,0 +1,21 @@
+.main {
+  height: 100%;
+}
+
+::ng-deep .cdk-overlay-container {
+  .cdk-overlay-backdrop-showing {
+    background: rgba(#000000, 0.5);
+    backdrop-filter: blur(12px);
+  }
+}
+
+::ng-deep .open-video-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  min-width: 640px;
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+::ng-deep .delete-video-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 8px;
+  background-color: transparent;
+}

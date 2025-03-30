@@ -1,0 +1,69 @@
+.delete-video-modal {
+  max-width: 400px;
+  padding: 20px 40px;
+  background-color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
+  .close-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .title {
+    margin: 8px 0 0;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #292830;
+  }
+
+  .text {
+    margin: 12px 0 0;
+
+    font-size: 14px;
+    color: #5b5c6a;
+    text-align: center;
+  }
+
+  .buttons-container {
+    width: 100%;
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    .button {
+      width: 100%;
+      height: 36px;
+
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1px;
+
+      border-radius: 8px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .cancel-button {
+      border: 1px solid #5061d0;
+      color: #5061d0;
+      background-color: transparent;
+    }
+
+    .submit-button {
+      border: 1px solid transparent;
+      color: #ffffff;
+      background-color: #e53f28;
+    }
+  }
+}

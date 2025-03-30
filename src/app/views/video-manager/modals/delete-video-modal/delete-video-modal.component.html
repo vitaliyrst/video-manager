@@ -1,0 +1,11 @@
+<div class="delete-video-modal">
+  <img class="close-icon" width="24" height="24" ngSrc="assets/close_gray_icon.svg" alt="close icon" (click)="close(false)">
+  <img width="40" height="41" ngSrc="assets/warning_icon.svg" alt="warning icon">
+  <h2 class="title">Delete this video?</h2>
+  <p class="text">Are you sure you want to delete this video? This action cannot be undone.</p>
+
+  <div class="buttons-container">
+    <button class="button cancel-button" (click)="close(false)">Cancel</button>
+    <button class="button submit-button" (click)="close(true)">Delete Video</button>
+  </div>
+</div>

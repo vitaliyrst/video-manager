@@ -1,0 +1,41 @@
+<div class="recorder-container">
+  <div class="loader" *ngIf="loading"></div>
+  <div class="error" *ngIf="errorMessage">Error: {{ errorMessage }}</div>
+
+  <div class="user-camera" [class.ready]="!loading && !errorMessage">
+    <video #videoRef autoplay muted></video>
+  </div>
+
+  <ng-container *ngIf="!loading && !errorMessage">
+    <div class="settings-container" *ngIf="!isRecording">
+      <div class="icon-wrapper" (click)="isOpenedSettings = !isOpenedSettings">
+        <img class="settings-icon" *ngIf="!isOpenedSettings" width="40" height="40" ngSrc="assets/settings_icon.svg" alt="settings icon"/>
+        <img *ngIf="isOpenedSettings" width="40" height="40" ngSrc="assets/close_icon.svg" alt="close icon"/>
+      </div>
+
+      <ul class="resolution-list" *ngIf="isOpenedSettings">
+        <li
+          class="resolution-item"
+          [class.selected]="selectedResolution === resolution.value"
+          *ngFor="let resolution of resolutions" (click)="selectResolution(resolution.value)"
+        >
+          <div class="item-description">
+            <b>{{ resolution.value }}</b>{{ ' (' + resolution.label + ')' }}
+          </div>
+
+          <img *ngIf="selectedResolution === resolution.value" ngSrc="assets/checked_icon.svg" height="24" width="24" alt="checked icon">
+        </li>
+      </ul>
+    </div>
+
+    <div class="recording-management-container">
+      <button *ngIf="!isRecording" class="start-button" (click)="startRecording()" [disabled]="isRecording"></button>
+      <button *ngIf="isRecording" class="stop-button" (click)="stopRecording()" [disabled]="!isRecording"></button>
+
+      <div class="progress-container" *ngIf="isRecording">
+        <mat-progress-bar mode="determinate" [value]="progressValue"></mat-progress-bar>
+        <div class="progress-value">{{ progressValue / 10 | number : '1.1' }} s</div>
+      </div>
+    </div>
+  </ng-container>
+</div>

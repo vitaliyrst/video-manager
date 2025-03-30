@@ -1,0 +1,13 @@
+<li class="video-item" (mouseenter)="showDeleteIcon = true" (mouseleave)="showDeleteIcon = false" (click)="openVideoModal()">
+  <div class="poster-container">
+    <img class="poster" [src]="video.poster" alt="video poster">
+  </div>
+
+  <div class="video-meta">
+    <span>{{ video.createdAt | date:'dd.MM.yyyy' }}</span>
+    <span>{{ video.createdAt | date:'HH:mm' }}</span>
+    <span class="duration">{{ video.duration }}s</span>
+  </div>
+
+  <img *ngIf="showDeleteIcon" width="28" height="28" ngSrc="assets/trash_icon.svg" class="delete-icon" (click)="deleteVideo($event)" alt="delete-icon"/>
+</li>

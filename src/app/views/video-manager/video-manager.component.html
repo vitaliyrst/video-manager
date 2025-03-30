@@ -1,0 +1,14 @@
+<div class="video-manager-page">
+  <app-recorder></app-recorder>
+
+  <div class="videos-container">
+    <ul class="video-list" *ngIf="videos.length">
+      <app-video-item *ngFor="let video of videos;" [video]="video"></app-video-item>
+    </ul>
+
+    <div class="no-videos" *ngIf="!videos.length">
+      <img width="40" height="41" ngSrc="assets/video_icon.svg" alt="video icon" />
+      There are no recorded videos yet
+    </div>
+  </div>
+</div>
