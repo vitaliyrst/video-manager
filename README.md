@@ -12,11 +12,6 @@ or
 npm run start
 ```
 
-
-## Deployment
-
-🔗 [www.example.com](http://www.example.com)
-
 ## Features
 
 1️⃣ **Video Storage in Firebase**
