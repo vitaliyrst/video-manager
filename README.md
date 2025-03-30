@@ -3,6 +3,12 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
 
 ## Development Server
+
+Install node modules (my node version is 22.10.0):
+```sh
+npm i
+```
+
 Run the development server using:
 ```sh
 ng serve
